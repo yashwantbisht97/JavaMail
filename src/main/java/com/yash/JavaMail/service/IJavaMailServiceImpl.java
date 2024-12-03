@@ -19,7 +19,7 @@ public class IJavaMailServiceImpl implements IJavaMailService{
     private String fromMail;
     @Override
     public String javaMail(String[] email) throws Exception {
-        String msg="test Mail";
+        String msg="Hello Receiver please find attachment, This is test Mail";
 
         String send= sendMail(msg,email);
         return msg + send;
@@ -30,7 +30,7 @@ public class IJavaMailServiceImpl implements IJavaMailService{
         MimeMessageHelper helper=new MimeMessageHelper(message, true);
         helper.setFrom(fromMail);
         helper.setCc(toEmails);
-        helper.setSubject("Hi from Yash ,open it to know it");
+        helper.setSubject("Hello This is testMail Subject");
         helper.setSentDate(new Date());
         helper.setText(msg);
         helper.addAttachment("yash.jpg", new ClassPathResource("yash.jpg"));  //place yash.jpg file src/main/resource folder
